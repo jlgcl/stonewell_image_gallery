@@ -1,0 +1,179 @@
+.ImageMain {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5%;
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+}
+
+.image-container {
+  padding: 5%;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 300px;
+}
+
+.flip-image {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  border-radius: 10px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-image:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.flip-front > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.flip-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-back {
+  background-color: teal;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-family: "Teko", sans-serif;
+  font-size: 20px;
+}
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Lobster", cursive;
+    font-size: 30px;
+  }
+
+  .image-container {
+    padding: 5%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 300px;
+  }
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-width: 640px) and (orientation: landscape) {
+  h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Lobster", cursive;
+    font-size: 30px;
+  }
+
+  .image-container {
+    padding: 10%;
+    padding-top: 5%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 300px;
+  }
+
+  .flip-back {
+    font-size: 25px;
+  }
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-width: 640px) {
+  h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Lobster", cursive;
+    font-size: 30px;
+  }
+
+  .image-container {
+    padding: 10%;
+    padding-top: 5%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 300px;
+  }
+
+  .flip-back {
+    font-size: 25px;
+  }
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Lobster", cursive;
+    font-size: 40px;
+  }
+
+  .image-container {
+    padding: 10%;
+    padding-top: 5%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 300px;
+  }
+
+  .flip-back {
+    font-size: 20px;
+  }
+}
+
+/* #### Desktops #### */
+@media screen and (min-width: 1024px) {
+  h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Lobster", cursive;
+    font-size: 50px;
+  }
+
+  .image-container {
+    padding: 5%;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 300px;
+  }
+}
