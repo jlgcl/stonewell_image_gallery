@@ -19,7 +19,7 @@ const ImageMain = () => {
       const fetchJson = await fetchReq.json();
       setImages(fetchJson);
     } catch (err) {
-      console.log(err);
+      alert("Fail to obtain data");
     }
   };
 
